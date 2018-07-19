@@ -1,0 +1,1 @@
+const $bus = new Vue();

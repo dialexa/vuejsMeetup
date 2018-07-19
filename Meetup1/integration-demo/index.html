@@ -50,7 +50,11 @@
     <!-- End App Footer -->
 
     <!-- App Snackbar Container -->
-    <div class="app-snackbar-container js-snackbar"></div>
+    <div class="app-snackbar-container" id="vue-snackbar">
+      <transition-group name="slide">
+        <v-snackbar-item v-for="item of queue" @remove="remove" :key="item.id" :item="item"></v-snackbar-item>
+      </transition-group>
+    </div>
     <!-- End App Snackbar Container -->
   </div>
 
@@ -60,8 +64,10 @@
   <!-- Vue Development Script -->
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-  <script src="src/snackbar.js"></script>
+  <script src="src/index.js"></script>
   <script src="src/todoService.js"></script>
+  <script src="src/snackbar-item.vue.js"></script>
+  <script src="src/snackbar.vue.js"></script>
   <script src="src/todo-item.vue.js"></script>
   <script src="src/todo.vue.js"></script>
 </body>

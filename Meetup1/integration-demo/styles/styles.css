@@ -133,14 +133,9 @@ button:hover {
   min-height: 3rem;
   align-items: center;
   padding: 0 1rem;
-  opacity: 0;
-  transform: translateX(calc(-100% - 1rem));
+  /* opacity: 0; */
+  /* transform: translateX(calc(-100% - 1rem)); */
   transition: opacity 300ms ease-out, transform 300ms ease-out;
-}
-
-.app-snackbar--show {
-  opacity: 1;
-  transform: translateX(0);
 }
 
 .app-snackbar:not(:last-child) {
@@ -171,18 +166,48 @@ button:hover {
   align-items: center;
 }
 
-.todos-leave-active {
-  animation: removeTodoAnimation 800ms;
+.todo-item:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.todo-item__checkbox {
+  margin-right: 0.5rem;
+}
+
+.todo-item__actions {
+  margin-left: auto;
+  flex: 0 0 auto;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+/* Vue transitions */
+.slide-enter,
+.slide-leave-to {
+  opacity: 0;
+  transform: translateX(calc(-100% - 1rem));
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: opacity 400ms ease-out, transform 400ms ease-out;
 }
 
 .todos-enter {
   opacity: 0;
 }
 
+.todos-leave-active {
+  animation: removeTodoAnimation 800ms;
+}
+
 .todos-enter-active {
   animation: addTodoAnimation 400ms;
 }
 
+/* Keyframes */
 @keyframes addTodoAnimation {
   0% {
     opacity: 0;
@@ -209,21 +234,4 @@ button:hover {
     opacity: 0;
     transform: translateX(100%);
   }
-}
-
-.todo-item:not(:last-child) {
-  margin-bottom: 1rem;
-}
-
-.todo-item__checkbox {
-  margin-right: 0.5rem;
-}
-
-.todo-item__actions {
-  margin-left: auto;
-  flex: 0 0 auto;
-}
-
-.line-through {
-  text-decoration: line-through;
 }

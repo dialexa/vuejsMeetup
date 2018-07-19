@@ -19,7 +19,7 @@ const TodoVue = new Vue({
       const todo = createTodo(this.text.trim());
       this.todos.push(todo);
       this.text = '';
-      snackbar.add('Successfully Added Todo');
+      $bus.$emit('snackbar:add', 'Successfully Added Todo');
     },
 
     remove(todoToRemove) {
