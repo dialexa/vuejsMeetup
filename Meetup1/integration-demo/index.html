@@ -34,7 +34,7 @@
         </form>
 
         <div class="todos__content">
-          <v-todo-item v-for="todo of todos" :todo="todo" @remove="remove" @complete="complete" />
+          <v-todo-item v-for="todo of todos" :todo="todo" :key="todo.id" @remove="remove" @complete="complete" />
         </div>
       </div>
     </main>
