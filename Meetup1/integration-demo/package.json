@@ -8,6 +8,7 @@
     "serve": "^9.2.0"
   },
   "scripts": {
-    "start": "parcel index.html -p 3000"
+    "start": "parcel index.html -p 3000",
+    "serve": "serve -l 3000"
   }
 }
