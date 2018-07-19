@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue Integration Demo</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+
+<body>
+  <div id="app">
+    <header class="app-header">
+      <div class="app-header__content">
+        <h1 class="app-header__title">jQuery to Vue Demo</h1>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <div class="js-todos todos">
+        <h3 class="todos__title">Your Todos</h3>
+        <form class="todos__form" id="add-todo">
+          <div class="combobox">
+            <input type="text" id="todos-add" name="add-todo-text" class="text-input" placeholder="What do you need to do?">
+            <button type="submit">Add Todo</button>
+          </div>
+        </form>
+
+        <div class="js-todos-content todos__content"></div>
+      </div>
+    </main>
+
+    <footer class="app-footer">
+
+    </footer>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="src/todo.js"></script>
+</body>
+
+</html>
