@@ -37,11 +37,9 @@ const TodoVue = new Vue({
   },
 });
 
-const createTodo = (text, completed = false) => ({
-  text,
-  completed,
-  id: guid(),
-});
+function createTodo(text, completed = false) {
+  return { text, completed, id: guid() };
+}
 
 function guid() {
   function s4() {
@@ -49,18 +47,5 @@ function guid() {
       .toString(16)
       .substring(1);
   }
-  return (
-    s4() +
-    s4() +
-    '-' +
-    s4() +
-    '-' +
-    s4() +
-    '-' +
-    s4() +
-    '-' +
-    s4() +
-    s4() +
-    s4()
-  );
+  return `${s4()}${s4()}-${s4()}-${s4()}-${s4()}-${s4()}${s4()}${s4()}`;
 }

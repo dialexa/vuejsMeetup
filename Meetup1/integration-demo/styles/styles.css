@@ -118,7 +118,7 @@ button:hover {
 }
 
 .app-snackbar-container {
-  position: absolute;
+  position: fixed;
   bottom: 1rem;
   left: 1rem;
   z-index: 9;
@@ -171,8 +171,26 @@ button:hover {
   align-items: center;
 }
 
-.todo-item--removing {
+.todos-leave-active {
   animation: removeTodoAnimation 800ms;
+}
+
+.todos-enter {
+  opacity: 0;
+}
+
+.todos-enter-active {
+  animation: addTodoAnimation 400ms;
+}
+
+@keyframes addTodoAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes removeTodoAnimation {
@@ -204,4 +222,8 @@ button:hover {
 .todo-item__actions {
   margin-left: auto;
   flex: 0 0 auto;
+}
+
+.line-through {
+  text-decoration: line-through;
 }

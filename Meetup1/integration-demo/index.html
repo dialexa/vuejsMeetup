@@ -24,6 +24,7 @@
     <!-- App Main -->
     <main class="app-main">
 
+      <!-- Begin Vue Todo App -->
       <div id="vue-todos">
         <h3 class="todos__title">Your Todo List</h3>
         <form class="todos__form" @submit.prevent="submit">
@@ -34,9 +35,12 @@
         </form>
 
         <div class="todos__content">
-          <v-todo-item v-for="todo of todos" :todo="todo" :key="todo.id" @remove="remove" @complete="complete" />
+          <transition-group name="todos">
+            <v-todo-item v-for="todo of todos" :todo="todo" :key="todo.id" @remove="remove" @complete="complete" />
+          </transition-group>
         </div>
       </div>
+      <!-- End Vue Todo App -->
     </main>
     <!-- End App Main -->
 
@@ -50,6 +54,7 @@
     <!-- End App Snackbar Container -->
   </div>
 
+  <!-- jQuery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
   <!-- Vue Development Script -->
@@ -57,7 +62,6 @@
 
   <script src="src/snackbar.js"></script>
   <script src="src/todoService.js"></script>
-  <script src="src/todo.js"></script>
   <script src="src/todo-item.vue.js"></script>
   <script src="src/todo.vue.js"></script>
 </body>
