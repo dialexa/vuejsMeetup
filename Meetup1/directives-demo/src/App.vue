@@ -11,14 +11,14 @@
 </template>
 
 <script>
-import Todos from './components/Todos'
+import Todos from './components/Todos';
 
 export default {
   name: 'App',
   components: {
     Todos
   }
-}
+};
 </script>
 
 <style>
@@ -38,7 +38,8 @@ header {
   height: 40px;
   display: flex;
   justify-content: center;
-  border-bottom: 1px solid #dfe5ec;
+  border-bottom: 1px solid lightslategray;
+  background: whitesmoke;
 }
 
 .content {
