@@ -25,13 +25,6 @@
     <main class="app-main">
       <!-- <div class="js-todos todos">
         <h3 class="todos__title">Your Todo List</h3>
-        <form class="todos__form" id="add-todo">
-          <div class="combobox">
-            <input type="text" id="todos-add" name="add-todo-text" class="text-input" placeholder="What do you need to do?" autofocus
-              autocomplete="off">
-            <button type="submit">Add Todo</button>
-          </div>
-        </form>
 
         <div class="js-todos-content todos__content"></div>
       </div> -->
@@ -40,13 +33,15 @@
         <h3 class="todos__title">Your Todo List</h3>
         <form class="todos__form" v-on:submit.prevent="submit">
           <div class="combobox">
-            <input type="text" id="todos-add" name="add-todo-text" class="text-input" placeholder="What do you need to do?" autofocus
-              autocomplete="off">
+            <input type="text" v-model="text" id="todos-add" name="add-todo-text" class="text-input" placeholder="What do you need to do?"
+              autofocus autocomplete="off">
             <button type="submit">Add Todo</button>
           </div>
         </form>
 
-        <div class="js-todos-content todos__content"></div>
+        <div class="js-todos-content todos__content">
+          <v-todo-item v-for="todo of todos"></v-todo-item>
+        </div>
       </div>
     </main>
     <!-- End App Main -->
