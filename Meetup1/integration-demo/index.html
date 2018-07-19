@@ -13,18 +13,22 @@
 
 <body>
   <div id="app">
+    <!-- App Header -->
     <header class="app-header">
       <div class="app-header__content">
         <h1 class="app-header__title">jQuery to Vue Demo</h1>
       </div>
     </header>
+    <!-- End App Header -->
 
+    <!-- App Main -->
     <main class="app-main">
       <div class="js-todos todos">
-        <h3 class="todos__title">Your Todos</h3>
+        <h3 class="todos__title">Your Todo List</h3>
         <form class="todos__form" id="add-todo">
           <div class="combobox">
-            <input type="text" id="todos-add" name="add-todo-text" class="text-input" placeholder="What do you need to do?">
+            <input type="text" id="todos-add" name="add-todo-text" class="text-input" placeholder="What do you need to do?" autofocus
+              autocomplete="off">
             <button type="submit">Add Todo</button>
           </div>
         </form>
@@ -32,13 +36,22 @@
         <div class="js-todos-content todos__content"></div>
       </div>
     </main>
+    <!-- End App Main -->
 
+    <!-- App Footer -->
     <footer class="app-footer">
-
     </footer>
+    <!-- End App Footer -->
+
+    <!-- App Snackbar Container -->
+    <div class="app-snackbar-container js-snackbar"></div>
+    <!-- End App Snackbar Container -->
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script src="src/snackbar.js"></script>
+  <script src="src/todoService.js"></script>
   <script src="src/todo.js"></script>
 </body>
 

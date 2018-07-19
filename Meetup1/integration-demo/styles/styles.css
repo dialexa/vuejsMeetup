@@ -5,6 +5,7 @@
   --secondary-black: #000f08;
   --primary-accent: #4f5d75;
   --text-white: #fefefe;
+  --footer-height: 60px;
 }
 
 *,
@@ -16,7 +17,7 @@
 html {
   background-color: var(--primary-gray);
   font-size: 16px;
-  font-family: "Roboto", Helvetica, sans-serif;
+  font-family: 'Roboto', Helvetica, sans-serif;
 }
 
 body {
@@ -41,7 +42,7 @@ h5 {
   font-size: 0.88rem;
 }
 
-input[type="text"] {
+input[type='text'] {
   height: 32px;
   width: 100%;
   padding: 0 0.5rem;
@@ -52,13 +53,22 @@ input[type="text"] {
 button {
   background-color: var(--primary-gray);
   border: none;
-  border-radius: 2px;
   cursor: pointer;
-  font-family: "Roboto", Helvetica, sans-serif;
+  font-family: 'Roboto', Helvetica, sans-serif;
   font-size: 1rem;
   height: 32px;
   min-width: 100px;
   padding: 0 8px;
+}
+
+button.btn-transparent {
+  background-color: transparent;
+  transition: box-shadow 150ms ease-out;
+}
+
+button.btn-transparent:hover {
+  background-color: #fafafa;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 button:hover {
@@ -67,6 +77,10 @@ button:hover {
 
 .combobox {
   display: flex;
+}
+
+#app {
+  padding-bottom: calc(var(--footer-height) + 2rem);
 }
 
 .app-header {
@@ -92,7 +106,7 @@ button:hover {
 .app-footer {
   background-color: var(--primary-gray);
   bottom: 0;
-  height: 120px;
+  height: var(--footer-height);
   position: absolute;
   width: 100%;
 }
@@ -103,11 +117,42 @@ button:hover {
   margin: 0 auto;
 }
 
+.app-snackbar-container {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 9;
+}
+
+.app-snackbar {
+  background-color: var(--primary-black);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  color: var(--primary-white);
+  display: flex;
+  min-width: 200px;
+  min-height: 3rem;
+  align-items: center;
+  padding: 0 1rem;
+  opacity: 0;
+  transform: translateX(calc(-100% - 1rem));
+  transition: opacity 300ms ease-out, transform 300ms ease-out;
+}
+
+.app-snackbar--show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.app-snackbar:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
 .todos {
   background-color: var(--primary-white);
   padding: 1rem;
   border-radius: 3px;
   box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
 }
 
 .todos__title {
@@ -117,4 +162,46 @@ button:hover {
 
 .todos__form {
   margin-bottom: 1rem;
+}
+
+.todo-item {
+  padding: 0.5rem 0;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.todo-item--removing {
+  animation: removeTodoAnimation 800ms;
+}
+
+@keyframes removeTodoAnimation {
+  0% {
+    opacity: 0.75;
+    transform: translateX(0);
+  }
+
+  25% {
+    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.3);
+    opacity: 0.75;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+.todo-item:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.todo-item__checkbox {
+  margin-right: 0.5rem;
+}
+
+.todo-item__actions {
+  margin-left: auto;
+  flex: 0 0 auto;
 }
