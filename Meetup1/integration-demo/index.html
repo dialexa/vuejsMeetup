@@ -23,24 +23,18 @@
 
     <!-- App Main -->
     <main class="app-main">
-      <!-- <div class="js-todos todos">
-        <h3 class="todos__title">Your Todo List</h3>
-
-        <div class="js-todos-content todos__content"></div>
-      </div> -->
 
       <div id="vue-todos">
         <h3 class="todos__title">Your Todo List</h3>
-        <form class="todos__form" v-on:submit.prevent="submit">
+        <form class="todos__form" @submit.prevent="submit">
           <div class="combobox">
-            <input type="text" v-model="text" id="todos-add" name="add-todo-text" class="text-input" placeholder="What do you need to do?"
-              autofocus autocomplete="off">
+            <input type="text" v-model="text" class="text-input" placeholder="What do you need to do?" autofocus autocomplete="off">
             <button type="submit">Add Todo</button>
           </div>
         </form>
 
-        <div class="js-todos-content todos__content">
-          <v-todo-item v-for="todo of todos"></v-todo-item>
+        <div class="todos__content">
+          <v-todo-item v-for="todo of todos" :todo="todo" @remove="remove" @complete="complete" />
         </div>
       </div>
     </main>
@@ -64,6 +58,7 @@
   <script src="src/snackbar.js"></script>
   <script src="src/todoService.js"></script>
   <script src="src/todo.js"></script>
+  <script src="src/todo-item.vue.js"></script>
   <script src="src/todo.vue.js"></script>
 </body>
 
