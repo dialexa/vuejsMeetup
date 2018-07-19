@@ -9,7 +9,7 @@ yarn install
 ```
 
 ```bash
-serve -l 3000
+yarn serve
 ```
 
 ## Follow Along
@@ -35,6 +35,6 @@ The basic steps taken to migrate this app to Vue are simple given this situation
 - Either download Vue, or drop in Vue's script tag
 - Migrate the html structure for the component to migrate (start small if you can) using either individual `Vue` instances, or `Vue.Component`
 - Migrate the JavaScript functionality for you Vue component
-- Clean up old code
+- Clean up/Remove old code
 
 You should find that you will likely end up with less user written code, as well as a relatively low effort migration.
