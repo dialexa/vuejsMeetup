@@ -23,9 +23,22 @@
 
     <!-- App Main -->
     <main class="app-main">
-      <div class="js-todos todos">
+      <!-- <div class="js-todos todos">
         <h3 class="todos__title">Your Todo List</h3>
         <form class="todos__form" id="add-todo">
+          <div class="combobox">
+            <input type="text" id="todos-add" name="add-todo-text" class="text-input" placeholder="What do you need to do?" autofocus
+              autocomplete="off">
+            <button type="submit">Add Todo</button>
+          </div>
+        </form>
+
+        <div class="js-todos-content todos__content"></div>
+      </div> -->
+
+      <div id="vue-todos">
+        <h3 class="todos__title">Your Todo List</h3>
+        <form class="todos__form" v-on:submit.prevent="submit">
           <div class="combobox">
             <input type="text" id="todos-add" name="add-todo-text" class="text-input" placeholder="What do you need to do?" autofocus
               autocomplete="off">
@@ -50,9 +63,13 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+  <!-- Vue Development Script -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
   <script src="src/snackbar.js"></script>
   <script src="src/todoService.js"></script>
   <script src="src/todo.js"></script>
+  <script src="src/todo.vue.js"></script>
 </body>
 
 </html>
