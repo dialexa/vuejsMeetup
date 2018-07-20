@@ -1,28 +1,9 @@
 <template>
-  <!-- modifiers with override and prevent -->
-  <div tabindex="0" class="todos" @keydown.meta.s.prevent="save">
-    <!-- v-if -->
-    <h2 v-if="!todos.length">Hello, what would you like to do today?</h2>
-    <!-- v-else-if -->
-    <h2 v-else-if="todos.length > 5">Hold up, you look a little packed!</h2>
-    <!-- v-else -->
-    <h2 v-else>Add another item!</h2>
-    <!-- v-model -->
-    <input type="text" v-model="newTodo"  @keydown.enter="addTodo"/>
-    <!-- v-on -->
-    <button @click="addTodo">Add</button>
-    <!-- v-show -->
-    <div class="notes" :class="{'danger': todos.length > 5}">
-      <h2 v-show="!todos.length">
-        Add a todo!
-      </h2>
-      <!-- v-for -->
-      <div :class="['todo', {'done': todo.done}]" v-for="(todo, index) in todos" :key="todo.id" @click="todo.done = !todo.done">
-        <input type="checkbox" v-model="todo.done">
-        <span class="todo__message">{{todo.message}}</span>
-        <button class="delete" @click.stop="remove(index)">X</button>
-      </div>
-    </div>
+  <div>
+    <!-- Demo Code -->
+
+
+    <!-- Toast -->
     <transition name="slide-fade">
       <div class="toast" v-show="showToast">
         {{toastMessage}}
@@ -35,28 +16,11 @@
 export default {
   data () {
     return {
-      todos: JSON.parse(window.localStorage.getItem('todos')) || [],
-      newTodo: '',
       toastMessage: '',
       showToast: false
     };
   },
   methods: {
-    addTodo () {
-      this.todos.push({
-        message: this.newTodo,
-        done: false,
-        id: `todo-${this.todos.length}`
-      });
-      this.newTodo = '';
-    },
-    save () {
-      window.localStorage.setItem('todos', JSON.stringify(this.todos));
-      this.toast('Saved notes');
-    },
-    remove (index) {
-      this.todos.splice(index, 1);
-    },
     toast (message) {
       this.toastMessage = message;
       this.showToast = true;
