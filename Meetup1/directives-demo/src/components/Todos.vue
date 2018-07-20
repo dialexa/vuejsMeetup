@@ -1,17 +1,28 @@
 <template>
   <div>
     <!-- Demo Code -->
-    <br>
+
+    <!-- v-if -->
+    <h2 v-if="!todos.length">Hello, what would you like to do today?</h2>
+    <h2 v-else-if="todos.length > 3">Woah, you're looking a little packed!</h2>
+    <h2 v-else>Add another todo!</h2>
+    
     <!-- v-model -->
     <input type="text" v-model="newTodo"/>
+
     <!-- v-input -->
     <button @click="add">Add</button>
 
     <!-- v-for -->
     <div class="notes">
+
+      <!-- v-for -->
       <div class="todo" v-for="todo in todos" v-bind:key="todo.key">
         {{todo.title}}
       </div>
+
+      <!-- v-show -->
+      <h2 v-show="!todos.length">Add a Todo!</h2>
     </div>
 
     <!-- Toast -->
