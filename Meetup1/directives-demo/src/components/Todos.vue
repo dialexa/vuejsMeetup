@@ -7,6 +7,13 @@
     <!-- v-input -->
     <button @click="add">Add</button>
 
+    <!-- v-for -->
+    <div class="notes">
+      <div class="todo" v-for="todo in todos" v-bind:key="todo.key">
+        {{todo.title}}
+      </div>
+    </div>
+
     <!-- Toast -->
     <transition name="slide-fade">
       <div class="toast" v-show="showToast">
@@ -30,7 +37,8 @@ export default {
     add () {
       this.todos.push({
         title: this.newTodo,
-        done: false
+        done: false,
+        key: new Date().getTime()
       });
       this.newTodo = '';
     },
