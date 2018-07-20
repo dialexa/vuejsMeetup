@@ -82,6 +82,7 @@ const todoModule = (function($, snackbar, todoService) {
 
     if (value) {
       const todo = createTodo(value);
+      todos.push(todo);
       appendTodo(todo);
       $todoInput.val('');
       todoService.saveTodo(todo);
