@@ -1,7 +1,11 @@
 <template>
   <div>
     <!-- Demo Code -->
-
+    <br>
+    <!-- v-model -->
+    <input type="text" v-model="newTodo"/>
+    <!-- v-input -->
+    <button @click="add">Add</button>
 
     <!-- Toast -->
     <transition name="slide-fade">
@@ -16,11 +20,20 @@
 export default {
   data () {
     return {
+      todos: [],
+      newTodo: '',
       toastMessage: '',
       showToast: false
     };
   },
   methods: {
+    add () {
+      this.todos.push({
+        title: this.newTodo,
+        done: false
+      });
+      this.newTodo = '';
+    },
     toast (message) {
       this.toastMessage = message;
       this.showToast = true;
