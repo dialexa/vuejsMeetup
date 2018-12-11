@@ -7,7 +7,7 @@ _This repository contains code, notes, and slides from the [Dallas Vue Meetup][m
 ### September 18, 2018
 - Intro to Vuex - [@jcampuza][@jcampuza]
 	- [Video](https://youtu.be/OHlfrVeRIdI)
-- Using Vue with Electron - [@CameronAdams777][CameronAdams777]
+- Using Vue with Electron - [@CameronAdams777][@CameronAdams777]
 	- [Video](https://youtu.be/OmAOORk5fGI)
 
 #### July 24, 2018
