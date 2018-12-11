@@ -3,6 +3,13 @@
 _This repository contains code, notes, and slides from the [Dallas Vue Meetup][meetup-link] talks._
 
 ## Past Events
+
+### September 18, 2018
+- Intro to Vuex - [@jcampuza][@jcampuza]
+	- [Video](https://youtu.be/OHlfrVeRIdI)
+- Using Vue with Electron - [@CameronAdams777][CameronAdams777]
+	- [Video](https://youtu.be/OmAOORk5fGI)
+
 #### July 24, 2018
 - A Deep Dive into Vue Directives - [@twaite][@twaite]
 	- [Example Code](./20180724-directives-deep-dive)
