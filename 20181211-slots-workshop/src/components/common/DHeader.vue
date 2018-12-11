@@ -9,13 +9,8 @@
 </template>
 
 <script>
-  import DIcon from './DIcon.vue';
-
   export default {
     name: 'DHeader',
-    components: {
-      DIcon
-    }
   }
 </script>
 

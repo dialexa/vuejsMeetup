@@ -1,13 +1,14 @@
 <template>
   <div id="app">
     <d-header/>
-    <h1 class="m-3">Welcome to the workshop!</h1>
+    <main class="app-content">
+      <h1 >Welcome to the workshop!</h1>
+    </main>
   </div>
 </template>
 
 <script>
 import DHeader from '@/components/common/DHeader.vue';
-import { reviews } from '@/data.js';
 import { mapActions } from 'vuex'
 
 export default {
@@ -46,7 +47,7 @@ export default {
   @apply bg-grey-lighter min-h-screen flex flex-col;
 }
 
-.main {
+.app-content {
   @apply flex flex-col flex-grow justify-center items-center mx-4;
 }
 </style>
