@@ -21,12 +21,12 @@ _This repository contains code, notes, and slides from the [Dallas Vue Meetup][m
 #### Febuary 19, 2018
 - [Live Stream on YouTube](https://www.youtube.com/watch?v=5mWssPKY-VQ)
 - Intro to Nuxt - [@dougiefresh49][@dougiefresh49]
-    - [slides](https://www.dropbox.com/s/ntedjolj9anfj07/Feb-2019--intro-to-nuxt.pdf?dl=0)
-    - [source code](https://github.com/dougiefresh49/starwars-pedia)
-    - [demo site](http://starwars-pedia.herokuapp.com/)
+    - [Slides](https://www.dropbox.com/s/ntedjolj9anfj07/Feb-2019--intro-to-nuxt.pdf?dl=0)
+    - [Source Code](https://github.com/dougiefresh49/starwars-pedia)
+    - [Demo](http://starwars-pedia.herokuapp.com/)
     - [Video](https://youtu.be/5mWssPKY-VQ?t=2830)
 - Transition Component - Travis Almand
-    - [slides/Slides](https://github.com/talmand/demo-transitions)
+    - [Code/Slides](https://github.com/talmand/demo-transitions)
     - [Video](https://youtu.be/5mWssPKY-VQ?t=5538)
 
 ## Propose a Talk
